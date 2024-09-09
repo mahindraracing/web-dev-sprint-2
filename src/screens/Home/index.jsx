@@ -66,8 +66,8 @@ const Home = () => {
 
       <main className="flex-1 p-4 md:p-6 flex flex-col">
         <div className="max-w-7xl mx-auto w-full">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Welcome to the Mahindra Platform</h1>
-          <p className="text-lg md:text-xl mb-4">Join in our live chat!</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Bem vindo a nossa Plataforma</h1>
+          <p className="text-lg md:text-xl mb-4">Entre no nosso chat!</p>
           <Button variant="secondary" className="bg-white text-red-500 hover:bg-gray-100 mb-6 w-full md:w-auto">
             Start Watching
           </Button>

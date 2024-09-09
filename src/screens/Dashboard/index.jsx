@@ -154,10 +154,10 @@ const Dashboard = () => {
               <ScrollArea className="h-[200px]">
                 <div className="space-y-4">
                   {[
-                    { city: "Berlin", date: "June 15, 2023", track: "Tempelhof Airport Street Circuit" },
-                    { city: "London", date: "July 2, 2023", track: "ExCeL London" },
-                    { city: "New York", date: "July 16, 2023", track: "Brooklyn Street Circuit" },
-                    { city: "Seoul", date: "August 13, 2023", track: "Seoul Street Circuit" },
+                    { city: "Berlin", date: "December 15, 2024", track: "Tempelhof Airport Street Circuit" },
+                    { city: "London", date: "September 26, 2024", track: "ExCeL London" },
+                    { city: "New York", date: "December 16, 2024", track: "Brooklyn Street Circuit" },
+                    { city: "Seoul", date: "October 2, 2024", track: "Seoul Street Circuit" },
                   ].map((race, index) => (
                     <div key={index} className="flex items-center space-x-4">
                       <div className="flex-shrink-0">
