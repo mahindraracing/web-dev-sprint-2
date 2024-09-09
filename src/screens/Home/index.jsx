@@ -5,7 +5,7 @@ import { Slider } from "@/components/ui/slider";
 
 const Home = () => {
   return (
-    <div className="bg-red-500 text-white min-h-screen flex flex-col">
+    <div className="bg-red-500 text-white min-h-screen flex flex-col ">
       <header className="bg-red-700 py-4 px-6">
         <nav>
           <ul className="flex justify-between">
@@ -16,7 +16,7 @@ const Home = () => {
         </nav>
       </header>
 
-      <main className="flex-1 p-4 md:p-6 flex flex-col">
+      <main className="flex-1 p-10 md:p-6 flex flex-col">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Welcome to the Mahindra Platform</h1>
         <p className="text-lg md:text-xl mb-4">Join in our live chat!</p>
         <Button variant="secondary" className="bg-white text-red-500 hover:bg-gray-100 mb-6 w-full md:w-auto">
@@ -64,7 +64,7 @@ const Home = () => {
           </div>
         </div>
 
-        <Card className="bg-white text-black rounded-lg shadow-lg">
+        <Card className="bg-white text-black rounded-lg shadow-lg mt-5">
               <CardHeader className="border-b border-gray-200">
                 <CardTitle className="text-2xl font-bold text-red-500">Volume Control</CardTitle>
               </CardHeader>
@@ -75,7 +75,7 @@ const Home = () => {
       </main>
 
       <footer className="bg-red-700 py-4 px-6 text-center mt-6">
-        <p>&copy; 2023 Your Streaming Platform. All rights reserved.</p>
+        <p>&copy; 2024 Mahindra Platform. All rights reserved.</p>
       </footer>
     </div>
   );
