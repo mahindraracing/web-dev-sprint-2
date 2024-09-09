@@ -1,7 +1,10 @@
 function Error() {
     return(
         <>
-            <h1>home</h1>
+        <div className="bg-red-500 h-[100vh] flex justify-center items-center">
+            <h1 className="font-bold text-[300px] text-white">404</h1>
+        </div>
+            
         </>
     )
 }
