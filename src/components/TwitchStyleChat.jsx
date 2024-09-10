@@ -81,7 +81,7 @@ const TwitchStyleChat = () => {
         </CardHeader>
 
         <CardContent className="p-0 flex-grow">
-          <ScrollArea className="h-full w-full px-4" ref={scrollAreaRef}>
+          <ScrollArea className="h-[630px] w-full px-4" ref={scrollAreaRef}>
             {messages.map((msg) => (
               <div key={msg.id} className="mb-2 flex items-center">
                 <Avatar className="w-10 h-10 mr-2 flex-shrink-0 m-2">
