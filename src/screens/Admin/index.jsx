@@ -88,6 +88,10 @@ function StreamingChat () {
       else if (lowerCaseMessage.includes('github')) {
         response = 'O nosso repositório do Github é esse: https://github.com/mahindraracing/web-dev-sprint-2';
       }
+
+      else if (lowerCaseMessage.includes('problema') || lowerCaseMessage.includes('problemas') || lowerCaseMessage.includes('logar')) {
+        response = "Está tendo problemas para logar? Contate o suporte para ver o seu Login de admin.";
+      }
   
       else {
         response = "Desculpe, não entendi sua mensagem. Você pode fornecer mais detalhes ou reformular sua pergunta?";
