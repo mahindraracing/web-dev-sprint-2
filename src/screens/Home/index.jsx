@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from '@/components/ui/badge';
 import TwitchStyleChat from '@/components/TwitchStyleChat';
 
 const Home = () => {
@@ -93,15 +94,17 @@ const Home = () => {
                 </CardHeader>
                 <CardContent className="flex flex-col md:flex-row justify-between items-start pt-4">
                   <div className="space-y-2 mb-4 md:mb-0">
-                    <p><span className="font-semibold">Volta mais rápida:</span> {stats.fastestLap}</p>
-                    <p><span className="font-semibold">Clima:</span> {stats.climate}</p>
-                    <p><span className="font-semibold">Umidade:</span> {stats.humidity}</p>
+                    <p><span className="font-semibold">Volta mais rápida:</span> <Badge variant="outline"> {stats.fastestLap} </Badge></p>
+                    <p><span className="font-semibold">Clima:</span> <Badge variant="outline"> {stats.climate} </Badge></p>
+                    <p><span className="font-semibold">Umidade:</span> <Badge variant="outline"> {stats.humidity} </Badge></p>
                   </div>
                   <div>
                     <h3 className="font-bold mb-2 text-red-500">RANKING</h3>
                     <ol className="list-decimal list-inside space-y-1">
                       {stats.ranking.map((name, index) => (
-                        <li key={index}>{name}</li>
+                        <div className='flex flex-col'>
+                       <Badge variant="destructive"> <li key={index}>{name}</li> </Badge>
+                       </div>
                       ))}
                     </ol>
                   </div>
