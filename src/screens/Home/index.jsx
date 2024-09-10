@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import TwitchStyleChat from '@/components/TwitchStyleChat';
 
-
 const Home = () => {
   const [stats, setStats] = useState({
     fastestLap: '',
@@ -13,7 +12,6 @@ const Home = () => {
   });
 
   useEffect(() => {
-    
     const fetchData = () => {
       const data = {
         statistics: {
@@ -32,49 +30,54 @@ const Home = () => {
       });
     };
 
-    
     fetchData();
-
-    
     const interval = setInterval(fetchData, 6000);
-
-    
     return () => clearInterval(interval);
   }, []);
 
-  
   const getRandomElement = (array) => {
     return array[Math.floor(Math.random() * array.length)];
   };
 
-  
   const shuffleArray = (array) => {
     return array.sort(() => Math.random() - 0.5);
   };
 
   return (
     <div className="bg-red-500 text-white min-h-screen flex flex-col">
-      <header className="bg-red-700 py-4 px-6">
-        <nav>
-          <ul className="flex justify-between">
-            <li><a href="/" className="hover:underline">Home</a></li>
-            <li><a href="/admin" className="hover:underline">Admin</a></li>
-            <li><a href="/admin" className="hover:underline">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+      <header className="bg-red-700 py-4 px-6 shadow-md">
+  <div className="flex items-center justify-between max-w-screen-xl mx-auto">
+    <a href="/" className="text-white text-2xl font-bold hover:underline">
+      <span className="text-red-300">Ma</span>hindra
+    </a>
+    <nav>
+      <ul className="flex space-x-6">
+        <li>
+          <a href="/" className="text-white hover:text-orange-300 transition-colors duration-300">Home</a>
+        </li>
+        <li>
+          <a href="/admin" className="text-white hover:text-orange-300 transition-colors duration-300">Admin</a>
+        </li>
+        <li>
+          <a href="/contact" className="text-white hover:text-orange-300 transition-colors duration-300">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
       <main className="flex-1 p-4 md:p-6 flex flex-col">
-        <div className="max-w-7xl mx-auto w-full">
+        <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">Bem vindo a nossa Plataforma</h1>
           <p className="text-lg md:text-xl mb-4">Entre no nosso chat!</p>
           <Button variant="secondary" className="bg-white text-red-500 hover:bg-gray-100 mb-6 w-full md:w-auto">
             Start Watching
           </Button>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 space-y-6">
-              <div className="bg-gray-800 rounded-lg shadow-lg aspect-video">
+          <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2 space-y-6 flex flex-col">
+              <div className="bg-gray-800 rounded-lg shadow-lg aspect-video flex-shrink-0">
                 <video 
                   className="rounded-lg w-full h-full object-cover"
                   controls 
@@ -84,7 +87,7 @@ const Home = () => {
                 </video>
               </div>
 
-              <Card className="bg-white text-black rounded-lg shadow-lg">
+              <Card className="bg-white text-black rounded-lg shadow-lg flex-shrink-0">
                 <CardHeader className="border-b border-gray-200">
                   <CardTitle className="text-2xl font-bold text-red-500">ESTATÍSTICAS</CardTitle>
                 </CardHeader>
@@ -107,7 +110,7 @@ const Home = () => {
             </div>
             
             <div className="lg:col-span-1 flex flex-col">
-              <div className="flex-grow">
+              <div className="flex-grow h-full min-h-[500px]">
                 <TwitchStyleChat />
               </div>
             </div>
