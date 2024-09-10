@@ -46,37 +46,40 @@ function StreamingChat () {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto mt-4 bg-gray-800 border-red-600 border-2">
-      <CardHeader>
-        <h2 className="text-2xl font-bold text-white">Support Chat</h2>
-      </CardHeader>
-      <CardContent>
-        <ScrollArea className="h-[300px] w-full pr-4">
-          {messages.map((msg, index) => (
-            <div key={index} className={`mb-2 ${msg.isUser ? 'text-right' : 'text-left'}`}>
-              <span className={`inline-block p-2 rounded-lg ${msg.isUser ? 'bg-red-600 text-white' : 'bg-gray-700 text-white'}`}>
-                {msg.text}
-              </span>
-            </div>
-          ))}
-          {isStreaming && <div className="text-gray-400">Assistente está digitando...</div>}
-        </ScrollArea>
-      </CardContent>
-      <CardFooter>
-        <div className="flex w-full space-x-2">
-          <Input
-            value={inputMessage}
-            onChange={(e) => setInputMessage(e.target.value)}
-            placeholder="Type your message..."
-            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-            className="bg-gray-700 text-white border-gray-600 focus:border-red-600"
-          />
-          <Button onClick={handleSendMessage} disabled={isStreaming} className="bg-red-600 hover:bg-red-700 text-white">
-            Send
-          </Button>
-        </div>
-      </CardFooter>
-    </Card>
+    <>
+    
+      <Card className="w-full max-w-md mx-auto mt-4 bg-gray-800 border-red-600 border-2">
+        <CardHeader>
+          <h2 className="text-2xl font-bold text-white">Support Chat</h2>
+        </CardHeader>
+        <CardContent>
+          <ScrollArea className="h-[300px] w-full pr-4">
+            {messages.map((msg, index) => (
+              <div key={index} className={`mb-2 ${msg.isUser ? 'text-right' : 'text-left'}`}>
+                <span className={`inline-block p-2 rounded-lg ${msg.isUser ? 'bg-red-600 text-white' : 'bg-gray-700 text-white'}`}>
+                  {msg.text}
+                </span>
+              </div>
+            ))}
+            {isStreaming && <div className="text-gray-400">Assistente está digitando...</div>}
+          </ScrollArea>
+        </CardContent>
+        <CardFooter>
+          <div className="flex w-full space-x-2">
+            <Input
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              placeholder="Type your message..."
+              onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+              className="bg-gray-700 text-white border-gray-600 focus:border-red-600"
+            />
+            <Button onClick={handleSendMessage} disabled={isStreaming} className="bg-red-600 hover:bg-red-700 text-white">
+              Send
+            </Button>
+          </div>
+        </CardFooter>
+      </Card>
+    </>
   );
 };
 
@@ -109,7 +112,30 @@ const AdminLogin = () => {
   };
 
   return (
+    <>
+    <header className="bg-red-700 py-4 px-6 shadow-md">
+  <div className="flex items-center justify-between max-w-screen-xl mx-auto">
+    <a href="/" className="text-white text-2xl font-bold hover:underline">
+      <span className="text-red-400">Ma</span>hindra
+    </a>
+    <nav>
+      <ul className="flex space-x-6">
+        <li>
+          <a href="/" className="text-white hover:text-orange-300 transition-colors duration-300">Home</a>
+        </li>
+        <li>
+          <a href="/admin" className="text-white hover:text-orange-300 transition-colors duration-300">Admin</a>
+        </li>
+        <li>
+          <a href="/contact" className="text-white hover:text-orange-300 transition-colors duration-300">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center bg-blend-overlay p-4">
+       
       <Card className="w-full max-w-md bg-gray-800 border-red-600 border-2">
         <CardHeader className="space-y-1">
           <CardTitle className="text-3xl font-bold text-center text-white">
@@ -197,6 +223,7 @@ const AdminLogin = () => {
       </Card>
       {showChat && <StreamingChat />}
     </div>
+    </>
   );
 };
 

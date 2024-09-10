@@ -1,27 +1,27 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip,
-  ResponsiveContainer 
-} from 'recharts';
-import { 
-  Car, 
-  Flag, 
-  Battery,  
-  Award, 
-  Users, 
-  Calendar, 
+import {
+  Award,
+  Battery,
+  Calendar,
+  Car,
+  CircleGauge,
+  Flag,
   MapPin,
-  CircleGauge
+  Users
 } from 'lucide-react';
 import { Link } from "react-router-dom";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis
+} from 'recharts';
 
 const raceData = [
   { name: 'Race 1', points: 18 },
@@ -34,7 +34,7 @@ const raceData = [
 const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-     
+
       <header className="bg-red-600 text-white p-4 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">Mahindra Dash</h1>
@@ -44,10 +44,10 @@ const Dashboard = () => {
         </div>
       </header>
 
-    
+
       <main className="container mx-auto py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    
+
           <Card className="bg-white shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Total Races</CardTitle>
@@ -90,9 +90,9 @@ const Dashboard = () => {
           </Card>
         </div>
 
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-        
+
           <Card className="bg-white shadow-lg">
             <CardHeader>
               <CardTitle>Race Performance</CardTitle>
@@ -110,7 +110,7 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
-        
+
           <Card className="bg-white shadow-lg">
             <CardHeader>
               <CardTitle>Car Status</CardTitle>
@@ -143,9 +143,9 @@ const Dashboard = () => {
           </Card>
         </div>
 
-      
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-      
+
           <Card className="bg-white shadow-lg">
             <CardHeader>
               <CardTitle>Upcoming Races</CardTitle>
@@ -175,7 +175,7 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
-        
+
           <Card className="bg-white shadow-lg">
             <CardHeader>
               <CardTitle>Team Information</CardTitle>
