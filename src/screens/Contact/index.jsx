@@ -110,7 +110,7 @@ export default function ContactPage() {
                     {['facebook', 'twitter', 'instagram', 'youtube'].map((social) => (
                       <Button key={social} variant="outline" size="icon" className="bg-white text-black border-gray-300 hover:bg-red-600 hover:text-white transition-colors">
                         <span className="sr-only">{social}</span>
-                        <i className={`fab fa-${social} h-5 w-5`}></i>
+                        <i className={`fab fa-${social} z-10`}></i>
                       </Button>
                     ))}
                   </div>
