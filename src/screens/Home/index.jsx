@@ -74,9 +74,9 @@ const Home = () => {
                 </CardHeader>
                 <CardContent className="flex flex-col md:flex-row justify-between items-start pt-4">
                   <div className="space-y-2 mb-4 md:mb-0">
-                    <p><span className="font-semibold">Fastest lap:</span> <Badge variant="outline"> {stats.fastestLap} </Badge></p>
-                    <p><span className="font-semibold">Weather:</span> <Badge variant="outline"> {stats.climate} </Badge></p>
-                    <p><span className="font-semibold">Humidity:</span> <Badge variant="outline"> {stats.humidity} </Badge></p>
+                    <p><span className="font-semibold">Fastest lap:</span> <Badge variant="outline" className="text-black"> {stats.fastestLap} </Badge></p>
+                    <p><span className="font-semibold">Weather:</span> <Badge variant="outline" className="text-black"> {stats.climate} </Badge></p>
+                    <p><span className="font-semibold">Humidity:</span> <Badge variant="outline" className="text-black"> {stats.humidity} </Badge></p>
                   </div>
                   <div>
                     <h3 className="font-bold mb-2 text-red-500">RANKING</h3>
