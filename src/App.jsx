@@ -5,9 +5,10 @@ import './styles/GlobalStyles.css';
 
 function App() {
     return (
-        <Router>
-            <Layout />
-        </Router>
+            <Router>
+                <Layout />
+            </Router>
+        
     );
 }
 

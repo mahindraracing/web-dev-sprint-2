@@ -50,8 +50,8 @@ const Home = () => {
 
       <main className="flex-1 p-4 md:p-6 flex flex-col">
         <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Bem vindo a nossa Plataforma</h1>
-          <p className="text-lg md:text-xl mb-4">Entre no nosso chat!</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Welcome to our platform</h1>
+          <p className="text-lg md:text-xl mb-4">Join our chat!</p>
           <Button variant="secondary" className="bg-white text-red-500 hover:bg-gray-100 mb-6 w-full md:w-auto">
             Start Watching
           </Button>
@@ -70,13 +70,13 @@ const Home = () => {
 
               <Card className="bg-white text-black rounded-lg shadow-lg flex-shrink-0">
                 <CardHeader className="border-b border-gray-200">
-                  <CardTitle className="text-2xl font-bold text-red-500">ESTATÍSTICAS</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-red-500">Stats</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col md:flex-row justify-between items-start pt-4">
                   <div className="space-y-2 mb-4 md:mb-0">
-                    <p><span className="font-semibold">Volta mais rápida:</span> <Badge variant="outline"> {stats.fastestLap} </Badge></p>
-                    <p><span className="font-semibold">Clima:</span> <Badge variant="outline"> {stats.climate} </Badge></p>
-                    <p><span className="font-semibold">Umidade:</span> <Badge variant="outline"> {stats.humidity} </Badge></p>
+                    <p><span className="font-semibold">Fastest lap:</span> <Badge variant="outline"> {stats.fastestLap} </Badge></p>
+                    <p><span className="font-semibold">Weather:</span> <Badge variant="outline"> {stats.climate} </Badge></p>
+                    <p><span className="font-semibold">Humidity:</span> <Badge variant="outline"> {stats.humidity} </Badge></p>
                   </div>
                   <div>
                     <h3 className="font-bold mb-2 text-red-500">RANKING</h3>
