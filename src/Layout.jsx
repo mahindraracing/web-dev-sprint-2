@@ -1,11 +1,14 @@
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import Sidebar from "./components/SideBar";
 import AppRoutes from "./routes/AppRoutes";
 
 export default function Layout() {
     return (
         <>
-            <Header />
+        <div>
+            <Sidebar/>
             <AppRoutes />  
+        </div>
         </>
     )
 }
