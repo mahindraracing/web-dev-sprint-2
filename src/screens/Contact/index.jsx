@@ -5,11 +5,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ChevronRight, Mail, Phone, MapPin } from 'lucide-react';
-import { useTheme } from '@/contexts/ThemeContext'; // Import the useTheme hook
+import { useTheme } from '@/contexts/ThemeContext'; 
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { theme } = useTheme(); // Use the theme from context
+  const { theme } = useTheme(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ export default function ContactPage() {
             <Card className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} border-${theme === 'dark' ? 'gray-700' : 'gray-200'} shadow-lg`}>
               <CardHeader>
                 <CardTitle className={`text-2xl font-bold ${theme === 'dark' ? 'text-gray-100' : 'text-gray-800'}`}>Get in Touch</CardTitle>
-                <CardDescription className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'}`}>We'd love to hear from you!</CardDescription>
+                <CardDescription className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'}`}>We&apos;d love to hear from you!</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 </form>
                 {isSubmitted && (
                   <div className={`mt-4 p-4 ${theme === 'dark' ? 'bg-green-800 text-green-100' : 'bg-green-100 text-green-800'} rounded-md animate-fade-in-down`}>
-                    Thank you for your message! We'll get back to you soon.
+                    Thank you for your message! We&apos;ll get back to you soon.
                   </div>
                 )}
               </CardContent>

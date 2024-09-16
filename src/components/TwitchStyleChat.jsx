@@ -21,7 +21,10 @@ const TwitchStyleChat = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    if (scrollAreaRef.current) { scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight; } }, [messages]);
+    if (scrollAreaRef.current) { 
+      scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight; 
+    }
+  }, [messages]);
 
   const handleSendMessage = () => {
     if (inputMessage.trim() !== "") {
@@ -46,8 +49,8 @@ const TwitchStyleChat = () => {
       const reader = new FileReader();
       reader.onload = () => {
         const base64String = reader.result;
-        setProfileImage(base64String); 
-        sessionStorage.setItem("profileImage", base64String); 
+        setProfileImage(base64String);
+        sessionStorage.setItem("profileImage", base64String);
       };
       reader.readAsDataURL(file);
     }
@@ -59,7 +62,7 @@ const TwitchStyleChat = () => {
   };
 
   const handleNameChange = (e) => {
-    setProfileName(e.target.value); 
+    setProfileName(e.target.value);
     sessionStorage.setItem("profileName", e.target.value);
   };
 
@@ -107,14 +110,13 @@ const TwitchStyleChat = () => {
               className="bg-gray-200 text-black text-sm"
               onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
             />
-            
             <button
               type="submit"
               className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded text-sm cursor-pointer flex items-center justify-center"
               onClick={handleSendMessage}
             >
-            <CircleChevronRight className="w-5 h-5" />  
-          </button>
+              <CircleChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </CardFooter>
       </Card>
@@ -130,7 +132,6 @@ const TwitchStyleChat = () => {
               <AvatarFallback>{profileName[0]}</AvatarFallback>
             </Avatar>
 
-            
             <Input
               value={profileName}
               onChange={handleNameChange}
@@ -138,7 +139,6 @@ const TwitchStyleChat = () => {
               className="bg-gray-200 text-black text-sm px-3 py-2 rounded w-64"
             />
 
-            
             <label
               className="w-64 px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-200 cursor-pointer text-center"
             >
@@ -152,7 +152,6 @@ const TwitchStyleChat = () => {
               />
             </label>
 
-            
             <input
               type="button"
               value="Remove Image"
@@ -160,12 +159,12 @@ const TwitchStyleChat = () => {
               onClick={handleRemoveImage}
             />
 
-          <input
+            <input
               type="button"
               value="Save"
-              className="w-64 px-3 py-2  bg-green-400 hover:bg-green-600 text-black rounded text-sm cursor-pointer"
+              className="w-64 px-3 py-2 bg-green-400 hover:bg-green-600 text-black rounded text-sm cursor-pointer"
               onClick={() => setIsModalOpen(false)}
-            />  
+            />
           </div>
         </DialogContent>
       </Dialog>

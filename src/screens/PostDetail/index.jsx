@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Heart, Share2 } from 'lucide-react';
 
 export default function PostDetail() {
@@ -10,6 +10,8 @@ export default function PostDetail() {
   const [newComment, setNewComment] = useState('');
   const [likes, setLikes] = useState(0);
   const [liked, setLiked] = useState(false);
+
+  const userName = sessionStorage.getItem('profileName') || 'User';
 
   useEffect(() => {
     const fetchPost = () => {
@@ -32,7 +34,11 @@ export default function PostDetail() {
 
   const handleAddComment = (e) => {
     e.preventDefault();
-    setComments([...comments, { text: newComment, user: "New User" }]);
+    const newCommentData = {
+      text: newComment,
+      user: userName
+    };
+    setComments([...comments, newCommentData]);
     setNewComment('');
   };
 
@@ -43,7 +49,6 @@ export default function PostDetail() {
       <div className="bg-white shadow-md rounded-lg overflow-hidden mb-6">
         <div className="flex items-center p-4 border-b border-gray-200">
           <Avatar className="h-12 w-12">
-            <AvatarImage src={post.author.avatar} />
             <AvatarFallback>{post.author.name[0]}</AvatarFallback>
           </Avatar>
           <div className="ml-4">
@@ -78,8 +83,7 @@ export default function PostDetail() {
           {comments.map((comment, index) => (
             <div key={index} className="flex items-start space-x-3 bg-white border border-gray-200 rounded-lg shadow-sm p-4">
               <Avatar className="h-10 w-10">
-                <AvatarImage src="https://via.placeholder.com/64" />
-                <AvatarFallback>NU</AvatarFallback>
+                <AvatarFallback>{comment.user[0]}</AvatarFallback>
               </Avatar>
               <div className="flex-1">
                 <p className="font-semibold text-gray-800">{comment.user}</p>
@@ -90,8 +94,7 @@ export default function PostDetail() {
         </div>
         <form onSubmit={handleAddComment} className="mt-6 flex items-start space-x-3">
           <Avatar className="h-10 w-10">
-            <AvatarImage src="https://via.placeholder.com/64" />
-            <AvatarFallback>NU</AvatarFallback>
+            <AvatarFallback>{userName[0]}</AvatarFallback>
           </Avatar>
           <div className="flex-1">
             <textarea

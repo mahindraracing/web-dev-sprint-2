@@ -20,23 +20,23 @@ export default function SettingsPage() {
   const [profileName, setProfileName] = useState('');
   const [email, setEmail] = useState('');
   const [notifications, setNotifications] = useState(true);
-
- 
   const [currentPassword, setCurrentPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [profilePicture, setProfilePicture] = useState(null); 
 
   useEffect(() => {
-    
     const storedName = sessionStorage.getItem('profileName') || '';
     const storedEmail = sessionStorage.getItem('email') || '';
     const storedPassword = sessionStorage.getItem('password') || '';
+    const storedPicture = sessionStorage.getItem('profilePicture') || '';
+
     setProfileName(storedName);
     setEmail(storedEmail);
     setCurrentPassword(storedPassword);
+    setProfilePicture(storedPicture);
   }, []);
 
   const handleSave = () => {
-    
     sessionStorage.setItem('profileName', profileName);
     sessionStorage.setItem('email', email);
 
@@ -75,28 +75,60 @@ export default function SettingsPage() {
       {activeTab === 'account' && (
         <section>
           <h2 className="text-2xl font-semibold mb-4">Account Settings</h2>
-          <div className="space-y-4">
+          <div className="space-y-6">
+            <div className="flex flex-col items-center">
+              {profilePicture && (
+                <img
+                  src={profilePicture}
+                  alt="Profile"
+                  className="w-24 h-24 rounded-full border border-gray-300 object-cover mb-4"
+                />
+              )}
+              <div>
+                <Label htmlFor="profilePicture" className="text-lg font-medium text-gray-700">Change Profile Picture</Label>
+                <input
+                  id="profilePicture"
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                      const reader = new FileReader();
+                      reader.onloadend = () => {
+                        const base64String = reader.result;
+                        sessionStorage.setItem('profilePicture', base64String);
+                        setProfilePicture(base64String);
+                      };
+                      reader.readAsDataURL(file);
+                    }
+                  }}
+                  className="mt-1 block w-full text-sm text-gray-500 file:py-2 file:px-4 file:border file:border-gray-300 file:rounded-md file:text-sm file:font-medium file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200"
+                />
+              </div>
+            </div>
             <div>
-              <Label htmlFor="profileName">Name</Label>
+              <Label htmlFor="profileName" className="text-lg font-medium text-gray-700">Name</Label>
               <Input
                 id="profileName"
                 value={profileName}
                 onChange={(e) => setProfileName(e.target.value)}
                 placeholder="Enter your name"
+                className="mt-1 p-3 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-lg font-medium text-gray-700">Email</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
+                className="mt-1 p-3 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
-              <Label htmlFor="language">Language</Label>
+              <Label htmlFor="language" className="text-lg font-medium text-gray-700">Language</Label>
               <Select value={language} onValueChange={setLanguage}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select a language" />
@@ -111,7 +143,7 @@ export default function SettingsPage() {
               </Select>
             </div>
             <div>
-              <Label htmlFor="currentPassword">Current Password</Label>
+              <Label htmlFor="currentPassword" className="text-lg font-medium text-gray-700">Current Password</Label>
               <div className="relative">
                 <Input
                   id="currentPassword"
@@ -119,11 +151,12 @@ export default function SettingsPage() {
                   value={currentPassword}
                   readOnly
                   placeholder="Your current password"
+                  className="mt-1 p-3 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"
                 />
                 <button
                   type="button"
                   onClick={togglePasswordVisibility}
-                  className="absolute inset-y-0 right-0 flex items-center px-2"
+                  className="absolute inset-y-0 right-0 flex items-center px-3"
                 >
                   {showPassword ? (
                     <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
