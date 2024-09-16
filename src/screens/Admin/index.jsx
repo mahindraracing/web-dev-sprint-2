@@ -36,7 +36,7 @@ const AdminLogin = () => {
       login(token);
       navigate("/dashboard");
     } catch (err) {
-      setError("Invalid email or password. Please try again.");
+      setError(`Invalid email or password. Please try again. ${err}`);
     } finally {
       setIsLoading(false);
     }
@@ -45,10 +45,10 @@ const AdminLogin = () => {
   return (
     <>
 
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center bg-blend-overlay p-4">
-        <Card className="w-full max-w-md bg-gray-800 border-red-600 border-2">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white-900 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center bg-blend-overlay p-4">
+        <Card className="w-full max-w-md bg-white-800  border-red-600 border-2">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-3xl font-bold text-center text-white">
+          <CardTitle className="text-3xl font-bold text-center text-black">
             Formula E Admin
           </CardTitle>
           <div className="flex justify-center">
@@ -63,7 +63,7 @@ const AdminLogin = () => {
               </Alert>
             )}
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-white">
+              <Label htmlFor="email" className="text-gray-700">
                 Email
               </Label>
               <div className="relative">
@@ -72,7 +72,7 @@ const AdminLogin = () => {
                   id="email"
                   type="email"
                   placeholder="admin@formula-e.com"
-                  className="pl-10 bg-gray-700 text-white border-gray-600 focus:border-red-600"
+                  className="pl-10 bg-white-700 text-gray-700 border-gray-600 focus:border-red-600"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -81,7 +81,7 @@ const AdminLogin = () => {
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-white">
+              <Label htmlFor="password" className="text-gray-700">
                 Password
               </Label>
               <div className="relative">
@@ -90,7 +90,7 @@ const AdminLogin = () => {
                   id="password"
                   type="password"
                   placeholder="••••••••"
-                  className="pl-10 bg-gray-700 text-white border-gray-600 focus:border-red-600"
+                  className="pl-10 bg-white-700 text-gray-700 border-gray-600 focus:border-red-600"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -94,17 +94,17 @@ const StreamingChat = () => {
   };
 
   return (
-    <div className="w-full max-w-md bg-gray-800 border-red-600 border-2 rounded-lg overflow-hidden">
+    <div className="w-full max-w-md bg-white-800 border-red-600 border-2 rounded-lg overflow-hidden">
       <ScrollArea className="h-64 p-4" ref={scrollAreaRef}>
         {messages.map((msg, index) => (
           <div key={index} className={`mb-2 ${msg.isUser ? 'text-right' : 'text-left'}`}>
-            <span className={`inline-block p-2 rounded-lg ${msg.isUser ? 'bg-red-600 text-white' : 'bg-gray-700 text-white'}`}>
+            <span className={`inline-block p-2 rounded-lg ${msg.isUser ? 'bg-red-600 text-white' : 'bg-gray-400 text-white'}`}>
               {msg.text}
             </span>
           </div>
         ))}
       </ScrollArea>
-      <div className="p-4 border-t border-gray-700">
+      <div className="p-4 border-t border-white-700">
         <div className="flex space-x-2">
           <Input
             type="text"
@@ -112,7 +112,7 @@ const StreamingChat = () => {
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-            className="flex-grow bg-gray-700 text-white border-gray-600 focus:border-red-600"
+            className="flex-grow bg-white-700 text-gray-700 border-gray-600 focus:border-red-600"
           />
           <Button
             onClick={handleSendMessage}
