@@ -3,7 +3,8 @@ import Home from '../screens/Home';
 import Admin from '../screens/Admin';
 import Error from '../screens/Error';
 import Dashboard from '../screens/Dashboard';
-import PrivateRoute from './PrivateRoute.jsx'; 
+import PrivateRoute from './PrivateRoute.jsx';
+import ContactPage from '@/screens/Contact';
 import { AuthProvider } from '../contexts/AuthContext';
 
 function AppRoutes() {
@@ -13,6 +14,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </AuthProvider>
