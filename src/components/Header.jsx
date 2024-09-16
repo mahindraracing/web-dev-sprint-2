@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Menu, X, Home, Info, Calendar, Trophy, User } from 'lucide-react'
+import { Menu, X, Home, Info, Calendar, TvMinimalPlayIcon } from 'lucide-react'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,6 +13,7 @@ export default function Header() {
     { name: 'Home', path: '/', icon: Home },
     { name: 'Contact', path: '/contact', icon: Info },
     { name: 'Admin', path: '/admin', icon: Calendar },
+    { name: 'Stream', path: '/stream', icon: TvMinimalPlayIcon },
   ]
 
   useEffect(() => {

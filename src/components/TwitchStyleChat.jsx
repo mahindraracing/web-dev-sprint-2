@@ -21,10 +21,7 @@ const TwitchStyleChat = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    if (scrollAreaRef.current) {
-      scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
-    }
-  }, [messages]);
+    if (scrollAreaRef.current) { scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight; } }, [messages]);
 
   const handleSendMessage = () => {
     if (inputMessage.trim() !== "") {
@@ -71,7 +68,6 @@ const TwitchStyleChat = () => {
       <Card className="w-full max-w-md bg-white text-black flex flex-col shadow-lg h-full">
         <CardHeader className="bg-gray-100 py-2 px-4 rounded-t-lg flex justify-between items-center">
           <h2 className="text-lg font-semibold text-black">Stream Chat</h2>
-          
           <input
             type="button"
             value="Edit Profile"

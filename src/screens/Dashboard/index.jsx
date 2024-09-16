@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -12,7 +11,6 @@ import {
   MapPin,
   Users
 } from 'lucide-react';
-import { Link } from "react-router-dom";
 import {
   Bar,
   BarChart,
@@ -24,11 +22,11 @@ import {
 } from 'recharts';
 
 const raceData = [
-  { name: 'Race 1', points: 18 },
-  { name: 'Race 2', points: 25 },
-  { name: 'Race 3', points: 15 },
-  { name: 'Race 4', points: 22 },
-  { name: 'Race 5', points: 20 },
+  { name: 'Live 1', views: 18000 },
+  { name: 'Live 2', views: 2500 },
+  { name: 'Live 3', views: 15000 },
+  { name: 'Live 4', views: 22000 },
+  { name: 'Live 5', views: 2800 },
 ];
 
 const Dashboard = () => {
@@ -86,7 +84,7 @@ const Dashboard = () => {
 
           <Card className="bg-white shadow-lg">
             <CardHeader>
-              <CardTitle>Race Performance</CardTitle>
+              <CardTitle>Live Performance</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>
@@ -95,7 +93,7 @@ const Dashboard = () => {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
-                  <Bar dataKey="points" fill="#ef4444" />
+                  <Bar dataKey="views" fill="#ef4444" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>

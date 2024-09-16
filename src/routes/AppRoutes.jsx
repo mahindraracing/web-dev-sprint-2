@@ -1,11 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
+
 import Home from '../screens/Home'; 
 import Admin from '../screens/Admin';
 import Error from '../screens/Error';
 import Dashboard from '../screens/Dashboard';
-import PrivateRoute from './PrivateRoute.jsx';
+import PrivateRoute from './PrivateRoute';
 import ContactPage from '@/screens/Contact';
+import Lives from '@/screens/Lives';
+import StreamPage from '@/screens/StreamPage/StreamPage';
+
 import { AuthProvider } from '../contexts/AuthContext';
+
 
 function AppRoutes() {
   return (
@@ -15,6 +20,8 @@ function AppRoutes() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/stream" element={<Lives />} />
+        <Route path="/stream/:id" element={<StreamPage />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </AuthProvider>
