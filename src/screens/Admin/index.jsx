@@ -44,26 +44,6 @@ const AdminLogin = () => {
 
   return (
     <>
-      <header className="bg-red-700 py-4 px-6 shadow-md">
-          <div className="flex items-center justify-between max-w-screen-xl mx-auto">
-        <a href="/" className="text-white text-2xl font-bold hover:underline">
-          <span className="text-red-400">Ma</span>hindra
-        </a>
-        <nav>
-          <ul className="flex space-x-6">
-            <li>
-              <a href="/" className="text-white hover:text-orange-300 transition-colors duration-300">Home</a>
-            </li>
-            <li>
-              <a href="/admin" className="text-white hover:text-orange-300 transition-colors duration-300">Admin</a>
-            </li>
-            <li>
-              <a href="/contact" className="text-white hover:text-orange-300 transition-colors duration-300">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      </header>
 
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center bg-blend-overlay p-4">
         <Card className="w-full max-w-md bg-gray-800 border-red-600 border-2">

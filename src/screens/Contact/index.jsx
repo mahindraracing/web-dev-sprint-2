@@ -16,26 +16,6 @@ export default function ContactPage() {
 
   return (
     <>
-    <header className="bg-red-700 py-4 px-6 shadow-md">
-  <div className="flex items-center justify-between max-w-screen-xl mx-auto">
-    <a href="/" className="text-white text-2xl font-bold hover:underline">
-      <span className="text-red-400">Ma</span>hindra
-    </a>
-    <nav>
-      <ul className="flex space-x-6">
-        <li>
-          <a href="/" className="text-white hover:text-orange-300 transition-colors duration-300">Home</a>
-        </li>
-        <li>
-          <a href="/admin" className="text-white hover:text-orange-300 transition-colors duration-300">Admin</a>
-        </li>
-        <li>
-          <a href="/contact" className="text-white hover:text-orange-300 transition-colors duration-300">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
 <div className="min-h-screen bg-white text-gray-800 overflow-hidden">
       <div className="absolute z-0">
         <div className="absolute bg-white opacity-20" /> 
