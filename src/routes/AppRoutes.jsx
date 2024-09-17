@@ -8,6 +8,7 @@ import PrivateRoute from './PrivateRoute';
 import ContactPage from '@/screens/Contact';
 import Lives from '@/screens/Lives';
 import StreamPage from '@/screens/StreamPage/StreamPage';
+import SocialMediaApp from '@/screens/Social';
 
 import { AuthProvider } from '../contexts/AuthContext';
 import PostDetail from '@/screens/PostDetail';
@@ -31,6 +32,7 @@ function AppRoutes() {
         <Route path="/stream/:id" element={<StreamPage />} />
         <Route path="/post/:postId" element={<PostDetail />} />
         <Route path="/bet" element={<BetPage/> } />
+        <Route path="/social" element={<SocialMediaApp/> } />
         <Route path="*" element={<Error />} />
       </Routes>
     </AuthProvider>
