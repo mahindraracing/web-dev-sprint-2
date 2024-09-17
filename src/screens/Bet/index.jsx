@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Trophy, Megaphone, PlusCircle } from 'lucide-react';
+import { Trophy, Megaphone, Wallet } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 
@@ -81,7 +81,7 @@ const BetPage = () => {
                 >
                     <Card className="p-4 sm:p-6 bg-white shadow-lg rounded-xl">
                         <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800 flex items-center">
-                            <PlusCircle className="mr-2 text-green-500" /> Wallet
+                            <Wallet className="mr-2 text-green-500" /> Wallet
                         </h2>
                         <p className="text-gray-700 text-sm sm:text-base">
                             Current Balance: ${balance.toFixed(2)}
