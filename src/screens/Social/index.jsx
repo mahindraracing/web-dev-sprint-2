@@ -351,7 +351,7 @@ const SocialMediaApp = () => {
                 onClick={() => setProfileSection("replied-posts")}
                 className="text-red-600 border-red-600 hover:bg-red-600 hover:text-white"
               >
-                Posts I Replied
+                Replied
               </Button>
             </div>
 
