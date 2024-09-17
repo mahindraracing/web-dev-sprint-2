@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Trophy, Megaphone, PlusCircle } from 'lucide-react'; 
+import { Trophy, Megaphone, PlusCircle } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
 
 const carImages = {
     mahindra: 'https://scontent.fcgh12-1.fna.fbcdn.net/v/t39.30808-6/410022421_744585037695708_8695323313270717829_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ujNucJencDgQ7kNvgEgE9sO&_nc_ht=scontent.fcgh12-1.fna&_nc_gid=A2BcnP1w8kyfC9bTQy67zLJ&oh=00_AYD9qSipybz7R8UGJ2KJ7eygmUrdzF7UejlYUUtnBfaReA&oe=66EEBAB8',
@@ -59,9 +61,19 @@ const BetPage = () => {
     };
 
     return (
+        <>
+        
+
         <div className="relative flex flex-col items-center justify-center min-h-screen bg-white p-4 sm:p-6">
             <main className="relative w-full max-w-3xl p-4 sm:p-6 mt-8 space-y-8 z-10">
-                <motion.section 
+
+            <Tabs defaultValue="wallet" className="max-w-[800px]">
+            <TabsList>
+                <TabsTrigger value="wallet">Wallet</TabsTrigger>
+                <TabsTrigger value="bet">Bet</TabsTrigger>
+            </TabsList>
+            <TabsContent value="wallet">
+            <motion.section 
                     className="space-y-6 mb-12"
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -85,11 +97,8 @@ const BetPage = () => {
                             <Button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300">
                                 Add to Wallet
                             </Button>
-                        </form>
-                    </Card>
-                </motion.section>
 
-                {errorMessage && (
+                            {errorMessage && (
                     <motion.section 
                         className="space-y-6 mb-12"
                         initial={{ opacity: 0, y: -30 }}
@@ -128,8 +137,11 @@ const BetPage = () => {
                         </p>
                     </Card>
                 </motion.section>
-
-                {/* Betting Form Section */}
+                        </form>
+                    </Card>
+                </motion.section>
+            </TabsContent>
+            <TabsContent value="bet">
                 <motion.div 
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -189,14 +201,13 @@ const BetPage = () => {
                     </Card>
                 </motion.div>
 
-                {/* Bets List Section */}
                 <motion.section 
                     className="space-y-6"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                    <Card className="p-4 sm:p-6 bg-white shadow-lg rounded-xl">
+                    <Card className="p-4 sm:p-6 bg-white shadow-lg rounded-xl mt-2">
                         <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">Your Bets</h2>
                         <ul className="space-y-4">
                             {bets.map((bet, index) => (
@@ -212,7 +223,7 @@ const BetPage = () => {
                                         alt={teams.find(team => team.id === bet.team)?.name}
                                         className="w-16 h-16 object-cover rounded-lg shadow-md"
                                     />
-                                    <div>
+                                    <div className='mt-2'>
                                         <p className="text-lg font-semibold text-gray-700">Team: {teams.find(team => team.id === bet.team)?.name}</p>
                                         <p className="text-lg">Amount: ${bet.amount}</p>
                                         <p className="text-lg font-bold text-green-600">Potential Payout: ${bet.payout}</p>
@@ -222,6 +233,9 @@ const BetPage = () => {
                         </ul>
                     </Card>
                 </motion.section>
+
+            </TabsContent>
+        </Tabs>
 
                 <motion.section 
                     className="space-y-6 mb-12"
@@ -245,6 +259,7 @@ const BetPage = () => {
                 </motion.section>
             </main>
         </div>
+        </>
     );
 };
 
