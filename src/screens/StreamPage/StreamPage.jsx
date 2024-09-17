@@ -8,6 +8,8 @@ import { Tooltip, TooltipProvider } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { streams } from '@/data/streams';
+import ChatLivePage from '@/components/ChatLivePage';
+
 
 export default function StreamPage() {
     const { id } = useParams();
@@ -37,6 +39,8 @@ export default function StreamPage() {
     }
 
     return (
+        <>
+        <div className='flex justify-center items-center flex-col'>
         <TooltipProvider>
             <div className="container mx-auto py-8 px-4">
                 <Card className="mb-8 overflow-hidden shadow-lg rounded-lg">
@@ -115,5 +119,10 @@ export default function StreamPage() {
                 </Dialog>
             </div>
         </TooltipProvider>
+        
+            <ChatLivePage/>
+    
+        </div>
+        </>
     );
 }
