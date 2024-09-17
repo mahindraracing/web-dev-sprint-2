@@ -68,7 +68,7 @@ const ChatLivePage = () => {
 
   return (
     <div className="h-full w-full flex justify-center items-center px-4 sm:px-6 md:px-8">
-      <Card className="w-full max-w-full sm:max-w-4xl lg:max-w-6xl xl:max-w-7xl bg-white text-black flex flex-col shadow-lg h-[70vh] sm:h-[65vh]">
+      <Card className="w-full max-w-full sm:max-w-4xl lg:max-w-6xl xl:max-w-full bg-white text-black flex flex-col shadow-lg h-[70vh] sm:h-[65vh]">
         <CardHeader className="bg-gray-100 py-3 px-4 rounded-t-lg flex justify-between items-center">
           <h2 className="text-lg font-semibold text-black">Stream Chat</h2>
           <button
