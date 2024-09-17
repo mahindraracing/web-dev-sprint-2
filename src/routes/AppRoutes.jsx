@@ -24,14 +24,14 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/stream" element={<Lives />} />
         <Route path="/settings" element={<SettingsPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/bet" element={<BetPage/> } />
         <Route path="/stream/:id" element={<StreamPage />} />
         <Route path="/post/:postId" element={<PostDetail />} />
-        <Route path="/bet" element={<BetPage/> } />
         <Route path="/social" element={<SocialMediaApp/> } />
         <Route path="*" element={<Error />} />
       </Routes>
