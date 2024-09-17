@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { X, Menu, Home, Mail, Settings, PlayCircle, TvMinimalPlayIcon, ShieldCheck, User, Wallet, MessageCircleMore } from 'lucide-react';
 
 const menuItems = [
-  { name: 'Register', path: '/register', icon: User },
   { name: 'Home', path: '/', icon: Home },
+  { name: 'Register', path: '/register', icon: User },
   { name: 'Social', path: '/social', icon: MessageCircleMore },
   { name: 'Stream', path: '/stream', icon: TvMinimalPlayIcon },
   { name: 'Bet', path: '/bet', icon: Wallet },
