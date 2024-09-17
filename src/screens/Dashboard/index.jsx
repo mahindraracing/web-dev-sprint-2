@@ -39,7 +39,7 @@ const Dashboard = () => {
 
           <Card className="bg-white shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Races</CardTitle>
+              <CardTitle className="text-sm font-medium">Total Lives</CardTitle>
               <Flag className="h-4 w-4 text-red-600" />
             </CardHeader>
             <CardContent>
@@ -102,27 +102,27 @@ const Dashboard = () => {
 
           <Card className="bg-white shadow-lg">
             <CardHeader>
-              <CardTitle>Car Status</CardTitle>
+              <CardTitle>Live Status</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Battery Health</span>
+                    <span className="text-sm font-medium">New Viewers</span>
                     <span className="text-sm font-medium">92%</span>
                   </div>
                   <Progress value={92} className="h-2 bg-gray-200" indicatorClassName="bg-green-500" />
                 </div>
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Motor Efficiency</span>
+                    <span className="text-sm font-medium">New Members</span>
                     <span className="text-sm font-medium">88%</span>
                   </div>
                   <Progress value={88} className="h-2 bg-gray-200" indicatorClassName="bg-blue-500" />
                 </div>
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Tire Wear</span>
+                    <span className="text-sm font-medium">Likes</span>
                     <span className="text-sm font-medium">35%</span>
                   </div>
                   <Progress value={35} className="h-2 bg-gray-200" indicatorClassName="bg-yellow-500" />
@@ -167,14 +167,14 @@ const Dashboard = () => {
 
           <Card className="bg-white shadow-lg">
             <CardHeader>
-              <CardTitle>Team Information</CardTitle>
+              <CardTitle>Information</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <Users className="h-6 w-6 text-red-600" />
                   <div>
-                    <p className="font-medium">Team Members</p>
+                    <p className="font-medium">Members</p>
                     <p className="text-sm text-gray-500">32 personnel</p>
                   </div>
                 </div>
@@ -195,8 +195,8 @@ const Dashboard = () => {
                 <div className="flex items-center space-x-4">
                   <Calendar className="h-6 w-6 text-red-600" />
                   <div>
-                    <p className="font-medium">Next Team Meeting</p>
-                    <p className="text-sm text-gray-500">June 10, 2023 - 09:00 AM</p>
+                    <p className="font-medium">Next Livestream</p>
+                    <p className="text-sm text-gray-500">September 29, 2024 - 09:00 AM</p>
                   </div>
                 </div>
               </div>
