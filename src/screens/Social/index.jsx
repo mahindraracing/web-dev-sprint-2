@@ -437,7 +437,7 @@ const Post = ({ post, onLike }) => {
           <h3 className="text-xl font-bold text-gray-900">{post.user}</h3>
           <p className="text-gray-700 mb-2">{post.content}</p>
           <div className="flex justify-between text-gray-600">
-            <span>{post.date}</span>
+            {/* <span>{post.date}</span> */}
             <div className="flex space-x-4">
               <div className="flex items-center cursor-pointer" onClick={handleLikeClick}>
                 <Heart className={`h-5 w-5 ${isLiked ? "text-red-600" : "text-gray-600"}`} />
