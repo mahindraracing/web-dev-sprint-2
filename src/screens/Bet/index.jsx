@@ -238,7 +238,7 @@ const BetPage = () => {
                                 <strong>New Season Announcement:</strong> The new Formula E season starts next month with exciting changes!
                             </li>
                             <li className="text-gray-700">
-                                <strong>Team A Update:</strong> Team A has introduced a new car model with improved performance.
+                                <strong>Mercedes Update:</strong> Mercedes has introduced a new car model with improved performance.
                             </li>
                         </ul>
                     </Card>
