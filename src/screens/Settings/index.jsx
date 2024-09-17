@@ -53,19 +53,19 @@ export default function SettingsPage() {
         <div className="flex space-x-4">
           <button
             onClick={() => setActiveTab('account')}
-            className={`py-2 px-4 text-sm font-medium rounded-t-md ${activeTab === 'account' ? 'bg-gray-200 text-gray-800' : 'text-gray-600 hover:bg-gray-100'}`}
+            className={`py-2 px-4 text-sm font-medium rounded-t-md ${activeTab === 'account' ? 'bg-red-600 text-white' : 'text-gray-600 hover:bg-red-50'} transition`}
           >
             Account
           </button>
           <button
             onClick={() => setActiveTab('notifications')}
-            className={`py-2 px-4 text-sm font-medium rounded-t-md ${activeTab === 'notifications' ? 'bg-gray-200 text-gray-800' : 'text-gray-600 hover:bg-gray-100'}`}
+            className={`py-2 px-4 text-sm font-medium rounded-t-md ${activeTab === 'notifications' ? 'bg-red-600 text-white' : 'text-gray-600 hover:bg-red-50'} transition`}
           >
             Notifications
           </button>
           <button
             onClick={() => setActiveTab('theme')}
-            className={`py-2 px-4 text-sm font-medium rounded-t-md ${activeTab === 'theme' ? 'bg-gray-200 text-gray-800' : 'text-gray-600 hover:bg-gray-100'}`}
+            className={`py-2 px-4 text-sm font-medium rounded-t-md ${activeTab === 'theme' ? 'bg-red-600 text-white' : 'text-gray-600 hover:bg-red-50'} transition`}
           >
             Theme
           </button>
@@ -74,14 +74,14 @@ export default function SettingsPage() {
 
       {activeTab === 'account' && (
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Account Settings</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-red-600">Account Settings</h2>
           <div className="space-y-6">
             <div className="flex flex-col items-center">
               {profilePicture && (
                 <img
                   src={profilePicture}
                   alt="Profile"
-                  className="w-24 h-24 rounded-full border border-gray-300 object-cover mb-4"
+                  className="w-24 h-24 rounded-full border border-red-500 object-cover mb-4"
                 />
               )}
               <div>
@@ -102,7 +102,7 @@ export default function SettingsPage() {
                       reader.readAsDataURL(file);
                     }
                   }}
-                  className="mt-1 block w-full text-sm text-gray-500 file:py-2 file:px-4 file:border file:border-gray-300 file:rounded-md file:text-sm file:font-medium file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200"
+                  className="mt-1 block w-full text-sm text-gray-500 file:py-2 file:px-4 file:border file:border-red-500 file:rounded-md file:text-sm file:font-medium file:bg-red-50 file:text-gray-700 hover:file:bg-red-100"
                 />
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function SettingsPage() {
                 value={profileName}
                 onChange={(e) => setProfileName(e.target.value)}
                 placeholder="Enter your name"
-                className="mt-1 p-3 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"
+                className="mt-1 p-3 border  rounded-md shadow-sm focus:ring-2 focus:ring-red-500"
               />
             </div>
             <div>
@@ -124,16 +124,16 @@ export default function SettingsPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="mt-1 p-3 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"
+                className="mt-1 p-3 border  rounded-md shadow-sm focus:ring-2 focus:ring-red-500"
               />
             </div>
             <div>
               <Label htmlFor="language" className="text-lg font-medium text-gray-700">Language</Label>
               <Select value={language} onValueChange={setLanguage}>
-                <SelectTrigger>
+                <SelectTrigger className="border ">
                   <SelectValue placeholder="Select a language" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="border ">
                   {languageOptions.map(option => (
                     <SelectItem key={option.value} value={option.value}>
                       {option.label}
@@ -151,7 +151,7 @@ export default function SettingsPage() {
                   value={currentPassword}
                   readOnly
                   placeholder="Your current password"
-                  className="mt-1 p-3 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"
+                  className="mt-1 p-3 border  rounded-md shadow-sm focus:ring-2 focus:ring-red-500"
                 />
                 <button
                   type="button"
@@ -176,7 +176,7 @@ export default function SettingsPage() {
 
       {activeTab === 'notifications' && (
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Notification Settings</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-red-600">Notification Settings</h2>
           <div className="flex items-center">
             <input
               id="notifications"
@@ -192,7 +192,7 @@ export default function SettingsPage() {
 
       {activeTab === 'theme' && (
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Theme Settings</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-red-600">Theme Settings</h2>
           <div className="space-y-4">
             <div>
               <h1>In Production</h1>
@@ -202,7 +202,7 @@ export default function SettingsPage() {
       )}
 
       <div className="flex justify-end mt-6">
-        <Button onClick={handleSave} className="bg-blue-600 text-white hover:bg-blue-700 transition">
+        <Button onClick={handleSave} className="bg-red-600 text-white hover:bg-red-700 transition">
           Save Changes
         </Button>
       </div>

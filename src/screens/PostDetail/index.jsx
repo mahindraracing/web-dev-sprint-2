@@ -10,6 +10,7 @@ export default function PostDetail() {
   const [newComment, setNewComment] = useState('');
   const [likes, setLikes] = useState(0);
   const [liked, setLiked] = useState(false);
+  const [shareLinkCopied, setShareLinkCopied] = useState(false);
 
   const userName = sessionStorage.getItem('profileName') || 'User';
 
@@ -42,11 +43,17 @@ export default function PostDetail() {
     setNewComment('');
   };
 
-  if (!post) return <div>Loading...</div>;
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href); // pegar url share
+    setShareLinkCopied(true);
+    setTimeout(() => setShareLinkCopied(false), 2000); 
+  };
+
+  if (!post) return <div className="text-center text-gray-500">Loading...</div>;
 
   return (
     <div className="container mx-auto py-8 px-4 max-w-3xl">
-      <div className="bg-white shadow-md rounded-lg overflow-hidden mb-6">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-6 border border-gray-200">
         <div className="flex items-center p-4 border-b border-gray-200">
           <Avatar className="h-12 w-12">
             <AvatarFallback>{post.author.name[0]}</AvatarFallback>
@@ -65,14 +72,17 @@ export default function PostDetail() {
         <div className="flex items-center justify-between p-4 border-t border-gray-200">
           <button
             onClick={handleLike}
-            className={`flex items-center space-x-2 ${liked ? 'text-red-600' : 'text-gray-500'} hover:text-red-600`}
+            className={`flex items-center space-x-2 ${liked ? 'text-red-600' : 'text-gray-500'} hover:text-red-600 transition-colors duration-300`}
           >
             <Heart className="w-5 h-5" />
             <span>{likes}</span>
           </button>
-          <button className="flex items-center space-x-2 text-gray-500 hover:text-gray-700">
+          <button
+            onClick={handleCopyLink}
+            className="flex items-center space-x-2 text-gray-500 hover:text-gray-700 transition-colors duration-300"
+          >
             <Share2 className="w-5 h-5" />
-            <span>Share</span>
+            <span>{shareLinkCopied ? 'Copied!' : 'Share'}</span>
           </button>
         </div>
       </div>
@@ -102,12 +112,12 @@ export default function PostDetail() {
               onChange={handleCommentChange}
               placeholder="Add a reply..."
               rows="3"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               required
             />
             <button
               type="submit"
-              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              className="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-300"
             >
               Reply
             </button>

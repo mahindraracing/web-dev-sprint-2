@@ -13,6 +13,7 @@ import { AuthProvider } from '../contexts/AuthContext';
 import PostDetail from '@/screens/PostDetail';
 import SettingsPage from '@/screens/Settings';
 import RegisterPage from '@/screens/RegisterPage';
+import BetPage from '@/screens/Bet';
 
 
 
@@ -29,6 +30,7 @@ function AppRoutes() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/stream/:id" element={<StreamPage />} />
         <Route path="/post/:postId" element={<PostDetail />} />
+        <Route path="/bet" element={<BetPage/> } />
         <Route path="*" element={<Error />} />
       </Routes>
     </AuthProvider>

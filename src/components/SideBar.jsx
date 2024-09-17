@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { X, Menu, Home, Mail, Settings, PlayCircle, TvMinimalPlayIcon, ShieldCheck, User } from 'lucide-react';
+import { X, Menu, Home, Mail, Settings, PlayCircle, TvMinimalPlayIcon, ShieldCheck, User, Wallet } from 'lucide-react';
 
 const menuItems = [
+  { name: 'Register', path: '/register', icon: User },
   { name: 'Home', path: '/', icon: Home },
   { name: 'Stream', path: '/stream', icon: TvMinimalPlayIcon },
-  { name: 'Register', path: '/register', icon: User },
+  { name: 'Bet', path: '/bet', icon: Wallet },
   { name: 'Contact', path: '/contact', icon: Mail },
   { name: 'Admin', path: '/admin', icon: ShieldCheck },
   { name: 'Settings', path: '/settings', icon: Settings },
