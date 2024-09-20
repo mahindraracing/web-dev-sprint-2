@@ -17,8 +17,8 @@ import {
 } from "@/components/ui/accordion"
 
 const drivers = [
-  { name: "Alex Lynn", image: "/Alex.jpeg", number: 94 },
-  { name: "Alexander Sims", image: "/Alexander.jpeg", number: 29 },
+  { name: "Nyck De Vries", image: "https://www.gpemcasa.com.br/newsimg/3d7b08671f43ff64954ecc5248d5df2d.webp", number: 21 },
+  { name: "Edoardo Mortara", image: "https://scontent.frao7-1.fna.fbcdn.net/v/t39.30808-6/457580961_18454582045013411_5686775562040732874_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Rsd9yyVmbeUQ7kNvgGWi6Is&_nc_ht=scontent.frao7-1.fna&_nc_gid=AWHLNLh82P7wV7cm3JxHrNT&oh=00_AYDPRQY14fGGSsKAJMFTK4pwmyfgMd7xl7kFozpc8OYINA&oe=66F34A2E", number: 48 },
 ];
 
 const races = [
