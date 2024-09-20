@@ -94,7 +94,7 @@ const StreamingChat = () => {
   };
 
   return (
-    <div className="w-full max-w-md bg-white-800 border-red-600 border-2 rounded-lg overflow-hidden">
+    <div className="w-full max-w-md bg-white-800 border-red-600 border-2 rounded-lg overflow-hidden mt-4">
       <ScrollArea className="h-64 p-4" ref={scrollAreaRef}>
         {messages.map((msg, index) => (
           <div key={index} className={`mb-2 ${msg.isUser ? 'text-right' : 'text-left'}`}>
