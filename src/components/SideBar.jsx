@@ -21,7 +21,7 @@ export default function Sidebar() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-50 p-2 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-200"
+        className="fixed top-4 left-4 z-50 p-2 bg-white text-gray-800 rounded-sm shadow-lg hover:bg-gray-100 transition-colors duration-200"
       >
         <Menu className="h-6 w-6" />
       </button>
