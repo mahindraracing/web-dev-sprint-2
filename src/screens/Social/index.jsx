@@ -330,7 +330,7 @@ const SocialMediaApp = () => {
               </Button>
             </div>
 
-            {/* Profile Section Tabs */}
+            {/* profile sec */}
             <div className="flex space-x-4 mb-6">
               <Button
                 variant={profileSection === "my-posts" ? "filled" : "outline"}
