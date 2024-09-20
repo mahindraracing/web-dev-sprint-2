@@ -57,7 +57,7 @@ export default function Sidebar() {
       </nav>
       <button className="mt-8 w-full p-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg shadow-md hover:from-red-600 hover:to-red-700 transition-all duration-200 flex items-center justify-center space-x-2">
         <PlayCircle className="h-5 w-5" />
-        <span className="font-medium">Live Race</span>
+        <span className="font-medium"><Link to="/stream">Live race</Link></span>
       </button>
       <div className="mt-8 pt-6 border-t border-gray-200">
         <p className="text-sm text-gray-500">© 2024 Mahindra Racing. All rights reserved.</p>
