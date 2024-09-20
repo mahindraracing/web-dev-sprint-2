@@ -32,11 +32,7 @@ export default function Sidebar() {
     <aside className="fixed top-0 left-0 h-full w-72 bg-white text-gray-800 shadow-2xl p-6 z-40 overflow-y-auto transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center mb-8">
         <Link to="/" className="flex items-center space-x-3">
-          <svg className="h-10 w-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#E10600" />
-            <path d="M2 17L12 22L22 17" stroke="#E10600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M2 12L12 17L22 12" stroke="#E10600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        <img className='w-10 h-10 rounded-md ' src="/mahindra.png"/>
           <span className="font-bold text-gray-800 text-lg">Mahindra Racing</span>
         </Link>
         <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-700 transition-colors duration-200">
