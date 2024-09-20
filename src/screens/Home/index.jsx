@@ -5,8 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Play, ChevronLeft, ChevronRight, Calendar, Users, Car, Clock, Trophy, Mail, Zap } from 'lucide-react';
+import { Play, ChevronLeft, ChevronRight, Calendar, Users, Car, Clock, Trophy, Mail, Zap, CircleHelp } from 'lucide-react';
+import { AccordionSustentability } from '@/components/FaqSustentability';
+import { AccordionHistory } from '@/components/FaqHistory';
 import { Youtube } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const drivers = [
   { name: "Alex Lynn", image: "/Alex.jpeg", number: 94 },
@@ -196,31 +204,30 @@ function HomePage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl sm:text-2xl text-gray-900 flex items-center">
-                  <Clock className="mr-2 h-5 w-5 sm:h-6 sm:w-6 text-red-600" />
-                  Live Timing
+                  <CircleHelp className="mr-2 h-5 w-5 sm:h-6 sm:w-6 text-red-600"/>
+                  FAQ
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <Tabs defaultValue="overall" className="w-full">
                   <TabsList>
                     <TabsTrigger value="overall">Overall</TabsTrigger>
-                    <TabsTrigger value="sector1">Sector 1</TabsTrigger>
-                    <TabsTrigger value="sector2">Sector 2</TabsTrigger>
-                    <TabsTrigger value="sector3">Sector 3</TabsTrigger>
+                    <TabsTrigger value="sector1">Sustentability</TabsTrigger>
+                    <TabsTrigger value="sector2">History</TabsTrigger>
                   </TabsList>
                   <TabsContent value="overall">
                     <div className="bg-gray-100 p-4 rounded-lg">
-                      <p className="text-center text-lg font-semibold">Live timing data for overall performance</p>
+                      <p className="text-center text-lg font-semibold"><AccordionDemo/></p>
                     </div>
                   </TabsContent>
                   <TabsContent value="sector1">
                     <div className="bg-gray-100 p-4 rounded-lg">
-                      <p className="text-center text-lg font-semibold">Live timing data for Sector 1</p>
+                      <p className="text-center text-lg font-semibold"><AccordionSustentability/></p>
                     </div>
                   </TabsContent>
                   <TabsContent value="sector2">
                     <div className="bg-gray-100 p-4 rounded-lg">
-                      <p className="text-center text-lg font-semibold">Live timing data for Sector 2</p>
+                      <p className="text-center text-lg font-semibold"><AccordionHistory/></p>
                     </div>
                   </TabsContent>
                   <TabsContent value="sector3">
@@ -295,3 +302,29 @@ function HomePage() {
 }
 
 export default HomePage;
+
+export function AccordionDemo() {
+  return (
+    <Accordion type="single" collapsible className="w-full">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>What is Mahindra Racing?</AccordionTrigger>
+        <AccordionContent>
+        Mahindra Racing is the motorsport division of Mahindra Group, focusing on electric racing to promote sustainability and innovation.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>What series does Mahindra Racing participate in?</AccordionTrigger>
+        <AccordionContent>
+          Mahindra Racing competes in the FIA Formula E Championship, a global series for fully electric single-seater cars.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Where can I watch Mahindra Racing events?</AccordionTrigger>
+        <AccordionContent>
+        Mahindra Racing events can be watched on various sports networks, streaming platforms, and the official Formula E website.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  )
+}
+
