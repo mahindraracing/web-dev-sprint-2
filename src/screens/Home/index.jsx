@@ -257,10 +257,10 @@ function HomePage() {
                 <p className="mb-4 text-gray-600">Our experts break down the strategies for today&apos;s race.</p>
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                   <Button className="bg-red-600 hover:bg-red-700 text-white">
-                    <Play className="mr-2 h-4 w-4" /> Watch Video
+                    <Play className="mr-2 h-4 w-4" /> <a href="https://www.youtube.com/watch?v=Kc1-Hlxncrs">Watch Video</a>
                   </Button>
                   <Button variant="outline" className="text-red-600 border-red-600 hover:bg-red-50">
-                    <Youtube className="mr-2 h-4 w-4" /> YouTube Channel
+                    <Youtube className="mr-2 h-4 w-4" /> <a href="https://www.youtube.com/@mahindraracing">YouTube Channel</a>
                   </Button>
                 </div>
               </CardContent>
