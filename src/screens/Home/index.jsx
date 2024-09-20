@@ -19,7 +19,9 @@ const races = [
   { name: "Portland E-Prix", date: "2023-06-24", location: "Portland, USA" },
   { name: "Rome E-Prix", date: "2023-07-15", location: "Rome, Italy" },
   { name: "London E-Prix", date: "2023-07-29", location: "London, UK" },
+  { name: "New York City E-Prix", date: "2023-08-13", location: "New York, USA" }, 
 ];
+
 
 const carViews = [
   { name: "Front", image: "https://resources.formula-e.pulselive.com/photo-resources/2023/02/11/bf21a320-374d-4f49-a748-a29d5ccb91de/Mahindra-Hyderabad-on-track.jpg?width=1440&height=810" },
