@@ -7,7 +7,7 @@ import { Trophy, Megaphone, Wallet } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const carImages = {
-    mahindra: 'https://scontent.fcgh12-1.fna.fbcdn.net/v/t39.30808-6/410022421_744585037695708_8695323313270717829_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ujNucJencDgQ7kNvgEgE9sO&_nc_ht=scontent.fcgh12-1.fna&_nc_gid=A2BcnP1w8kyfC9bTQy67zLJ&oh=00_AYD9qSipybz7R8UGJ2KJ7eygmUrdzF7UejlYUUtnBfaReA&oe=66EEBAB8',
+    mahindra: '/mahindra.png',
     porsche: 'https://bandalheira.cdn.magazord.com.br/img/2022/05/produto/6758/plc-0507-placa-decorativa-porsche-logo-2.jpg?ims=fit-in/1200x1200',
     mercedes: 'https://www.fage.com.br/fx-files/images/small/plgProducts-3kyhoamosp.jpg',
 };
