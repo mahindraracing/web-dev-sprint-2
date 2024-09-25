@@ -12,6 +12,14 @@ Bem-vindo ao repositório **Web Dev Sprint 2**! Este projeto é parte de um desa
 - [Contribuindo](#contribuindo)
 - [Licença](#licença)
 
+## 👥 Integrantes do Grupo
+
+- **RM 555499** - Matheus Montovaneli
+- **RM 554763** - Caio Suzano
+- **RM 555768** - Guilherme Linard
+- **RM 555159** - Lucas Vasquez Silva
+- **RM 555004** - André Nakamatsu Rocha
+
 ## Visão Geral 🌟
 
 Este repositório contém o código e os recursos para o projeto Web Dev Sprint 2. Inclui uma série de exercícios e implementações de desenvolvimento web, tais como:
